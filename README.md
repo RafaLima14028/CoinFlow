@@ -4,6 +4,8 @@ CoinFlow é um site minimalista que exibe câmbio entre moedas, com design elega
 
 Acesse a versão online aqui: **[https://coinflow-rafalima.vercel.app/](https://coinflow-rafalima.vercel.app/)**
 
+![Imagem da interface](design-pagina.png)
+
 ## 🛠️ Tecnologias Utilizadas
 
 - **Frontend:** HTML, CSS e JavaScript
