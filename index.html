@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="CoinFlow: Acompanhe cotações de moedas em tempo real, converta valores com taxas atualizadas e visualize gráficos históricos. Ferramenta de câmbio rápida e intuitiva.">
+    <title>CoinFlow - Câmbio de Moedas</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "CoinFlow - Câmbio de Moedas",
+      "description": "Conversor de moedas com taxas de câmbio em tempo real e gráficos históricos.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>CoinFlow</h1>
+                <p>Câmbio de Moedas em Tempo Real</p>
+            </div>
+
+            <button id="theme-toggle" title="Alternar tema claro/escuro">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="theme-icon-light">
+                    <title>Ícone do tema claro (sol)</title>
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.95-4.243l-1.59-1.59M3 12h2.25m.386-6.364l1.59 1.591M12 12a6 6 0 100 12 6 6 0 000-12z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="theme-icon-dark" style="display: none;">
+                    <title>Ícone do tema escuro (lua)</title>
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                </svg>
+            </button>
+        </header>
+        <main>
+            <div class="converter">
+                <div class="main-content">
+                    <div class="controls">
+                        <div class="input-group">
+                            <label for="amount">Valor</label>
+                            <input type="number" id="amount" value="1" min="1">
+                        </div>
+                        <div class="currency-group">
+                            <div class="from-group">
+                                <label for="from-currency">De</label>
+                                <select id="from-currency"></select>
+                            </div>
+                            <button id="swap-button" title="Inverter moedas">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="swap-icon">
+                                    <title>Ícone de inverter moedas</title>
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h18m-7.5-14L21 7.5m0 0L16.5 12M21 7.5H3" />
+                                </svg>
+                            </button>
+                            <div class="to-group">
+                                <label for="to-currency">Para</label>
+                                <select id="to-currency"></select>
+                            </div>
+                        </div>
+                        <button id="convert-button">Converter</button>
+                        <div id="result"></div>
+                        <div id="last-update"></div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <div class="chart-options">
+                            <button class="time-range-btn active" data-days="7">7D</button>
+                            <button class="time-range-btn" data-days="15">15D</button>
+                            <button class="time-range-btn" data-days="30">30D</button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="history-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <section class="content-info">
+            <h2>Sua Ferramenta Completa de Câmbio</h2>
+            <p>
+                Com o CoinFlow, você tem acesso a uma ferramenta poderosa e fácil de usar para todas as suas
+                necessidades de câmbio. Converta moedas com taxas de câmbio atualizadas, acompanhe as flutuações do
+                mercado com nossos gráficos interativos e mantenha-se informado sobre as últimas tendências financeiras.
+                Ideal para viajantes, investidores e qualquer pessoa interessada no mercado de moedas.
+            </p>
+        </section>
+        <footer>
+            <p>Powered by <a href="https://awesomeapi.com.br/" target="_blank">AwesomeAPI</a></p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
